@@ -1,0 +1,8 @@
+RewriteEngine On
+
+
+RewriteCond %{QUERY_STRING} ^filter=(.*)$ 
+RewriteRule ^content/items/([a-z]+)?$ index.php?route=$1&filter=%1 [L]
+
+RewriteRule ^content/items/([a-zA-Z]+)/([0-9]+)$ index.php?route=$1&_id=$2 [L]
+RewriteRule ^content/items/([a-zA-Z]+)$ index.php?route=$1 [L]
